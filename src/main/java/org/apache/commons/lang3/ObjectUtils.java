@@ -141,6 +141,11 @@ public class ObjectUtils {
      *         not {@code null}s or array contains no elements.
      * @since 3.5
      */
+    /*@ public normal_behavior
+  @ ensures \result <==> (values != null &&
+  @         (\forall int i; 0 <= i && i < values.length; values[i] != null));
+  @*/
+
     public static boolean allNotNull(final Object... values) {
         return values != null && Stream.of(values).noneMatch(Objects::isNull);
     }
@@ -190,6 +195,10 @@ public class ObjectUtils {
      *         {@code null} or empty {@code false} is also returned.
      * @since 3.5
      */
+    /*@ public normal_behavior
+  @ ensures \result <==> (values != null && values.length > 0 &&
+  @         (\exists int i; 0 <= i && i < values.length; values[i] != null));
+  @*/
     public static boolean anyNotNull(final Object... values) {
         return firstNonNull(values) != null;
     }
@@ -216,6 +225,10 @@ public class ObjectUtils {
      *         or empty, {@code true} is also returned.
      * @since 3.11
      */
+    /*@ public normal_behavior
+  @ ensures \result <==> (values == null ||
+  @         (\exists int i; 0 <= i && i < values.length; values[i] == null));
+  @*/
     public static boolean anyNull(final Object... values) {
         return !allNotNull(values);
     }
@@ -588,6 +601,13 @@ public class ObjectUtils {
      *  or {@code null} if there are no non-null values.
      * @since 3.0
      */
+    /*@ public normal_behavior
+  @ requires values != null;
+  @ ensures (\result == null) <==> (values.length == 0 ||
+  @         (\forall int i; 0 <= i && i < values.length; values[i] == null));
+  @ ensures (\result != null ==> (\exists int i; 0 <= i && i < values.length; values[i] == \result));
+  @*/
+
     @SafeVarargs
     public static <T> T firstNonNull(final T... values) {
         return Streams.of(values).filter(Objects::nonNull).findFirst().orElse(null);
@@ -691,6 +711,11 @@ public class ObjectUtils {
      * @see Suppliers#get(Supplier)
      * @since 3.18.0
      */
+    /*@ public normal_behavior
+  @ ensures (object != null ==> \result == object);
+  @ ensures (object == null ==> \result == defaultValue);
+  @*/
+
     public static <T> T getIfNull(final T object, final T defaultValue) {
         return object != null ? object : defaultValue;
     }
