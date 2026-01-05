@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -37,6 +37,6 @@ public class App {
         System.out.println("Input: " + input);
         System.out.println("Digits: " + StringUtils.getDigits(input));
         System.out.println("IsMixedCase: " + StringUtils.isMixedCase(input));
-        System.out.println("Done ✅");
+        System.out.println("Done âœ…");
     }
 }
