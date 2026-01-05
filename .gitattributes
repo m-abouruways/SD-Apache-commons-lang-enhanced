@@ -22,3 +22,5 @@
 *.css    text
 *.js     text
 *.sql    text
+*.java text eol=lf
+Dockerfile text eol=lf
