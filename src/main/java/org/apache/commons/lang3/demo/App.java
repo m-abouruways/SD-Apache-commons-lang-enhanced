@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -19,11 +19,9 @@ package org.apache.commons.lang3.demo;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Simple demo entry point used to package and run this project as an executable
- * application (e.g., inside Docker) for educational and CI purposes.
- * <p>
- * This class does not change the behavior of the Commons Lang library.
- * </p>
+ * Simple demo entry point used to package and run this project inside Docker.
+ *
+ * <p>This class does not change the behavior of the Commons Lang library.</p>
  */
 public class App {
 
@@ -37,6 +35,6 @@ public class App {
         System.out.println("Input: " + input);
         System.out.println("Digits: " + StringUtils.getDigits(input));
         System.out.println("IsMixedCase: " + StringUtils.isMixedCase(input));
-        System.out.println("Done âœ…");
+        System.out.println("Done OK");
     }
 }
