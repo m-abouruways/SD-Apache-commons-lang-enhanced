@@ -26,6 +26,13 @@ import org.apache.commons.lang3.StringUtils;
 public class App {
 
     /**
+     * Public constructor.
+     */
+    public App() {
+        // no-op
+    }
+
+    /**
      * Runs a small demonstration using {@link StringUtils}.
      *
      * @param args optional command line arguments; the first one is used as input
