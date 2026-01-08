@@ -16,10 +16,6 @@
  */
 
 /**
- * Demo package containing a minimal runnable entry point used to execute the
- * library inside a container (Docker) for validation and orchestration readiness.
- *
- * <p>This package is provided for educational and CI/CD demonstration purposes
- * and does not modify the behavior of the Commons Lang library.</p>
+ * Demo application package used for Docker execution.
  */
 package org.apache.commons.lang3.demo;
