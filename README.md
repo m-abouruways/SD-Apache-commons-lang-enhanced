@@ -125,3 +125,13 @@ Apache Commons Components
 -------------------------
 
 Please see the [list of components](https://commons.apache.org/components.html)
+## Docker
+
+Run the image from DockerHub:
+
+`powershell
+docker pull mabouruways/commons-lang-enhanced:17d963532
+docker run --rm mabouruways/commons-lang-enhanced:17d963532
+
+>> `
+>> "@ | Add-Content -Encoding UTF8 README.md
